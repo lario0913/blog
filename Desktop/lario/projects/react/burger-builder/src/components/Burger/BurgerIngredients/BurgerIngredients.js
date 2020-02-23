@@ -13,13 +13,12 @@ const BurgerIngredients = props => {
             break;
 
         case ('bread-top'):
-            ingredients = (
+            return ingredients = (
             <div className={styles.BreadTop}>
-                 <div className={styles.seeds1}></div>
-                 <div className={styles.seeds2}></div>
+                 <div className={styles.Seeds1}></div>
+                 <div className={styles.Seeds2}></div>
             </div>
-            )
-            break;
+            );
 
         case ('meat'):
             ingredients = <div className={styles.Meat}></div>
@@ -33,12 +32,14 @@ const BurgerIngredients = props => {
             ingredients = <div className={styles.Salad}> </div>
             break;
         
-        case ('bread-bottom'):
+        case ('bacon'):
             ingredients = <div className={styles.Bacon}> </div>
             break;
         default :
                 ingredients = null
     }
+
+    return ingredients
 }
 
 
