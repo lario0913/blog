@@ -8,6 +8,7 @@ import OrderSummary from '../../components/Burger/BuildControls/OrderSummary/Ord
 import Spinner from '../../components/UI/Spinner/Spinner'
 import withErrorHandler from '../../hoc/withErrorHandler'
 
+
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -92,26 +93,12 @@ class BurgerBuilder extends Component {
     }
 
     ProceedWithOrder = () =>  {
-        // this.setState({loading: true})
-        // const order = {
-        //     ingredients : this.state.ingredients,
-        //     price : this.state.price,
-        //     customer : {
-        //         name : "Larrieman",
-        //         country : "Nigeria"
-        //     },
-        //     email : "test@test.com",
-        //     deliveryMethod : "fastest delivery"
-        // }
-        // axios.post('/order.json', order)
-        //     .then(res => this.setState({loading: false, showSummary: false}))
-
-        //     .catch(error => this.setState({loading : false, showSummary: false}))
-        
+                
         const queryParams = []
         for (let i in this.state.ingredients){
             queryParams.push(encodeURIComponent(i) + "=" + encodeURIComponent(this.state.ingredients[i]))
         }
+        queryParams.push('price=' + this.state.total)
         const queryString = queryParams.join('&')
         this.props.history.push({
             pathname:'/checkout',
