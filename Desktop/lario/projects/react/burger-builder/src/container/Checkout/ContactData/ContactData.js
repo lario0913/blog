@@ -151,7 +151,7 @@ class ContactData extends Component {
                         ))
                     }
 
-                    <Buttons btnType="Success" disabled={!this.state.formIsValid} >ORDER NOW</Buttons>
+                    <Buttons btnType="Success" disabled={this.state.formIsValid} >ORDER NOW</Buttons>
             </form>
         )
         if (this.state.loading){
